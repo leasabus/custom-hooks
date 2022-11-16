@@ -1,0 +1,48 @@
+import { Text, Box, Stack, Image, StackDivider, Divider } from '@chakra-ui/react';
+import nft from './assets/nft.jpg';
+import eth from './assets/eth.svg';
+import clock from './assets/clock.svg';
+import profile from './assets/profile.png';
+
+//Card with ChakraUi
+export const App = () => {
+  return (
+    <Stack bgColor="primary.800"
+      padding={4}
+      spacing={4}
+      borderRadius="lg"
+      boxShadow="xl"
+      maxWidth={250} >
+      <Image width={250} height={230} src={nft} borderRadius={10}></Image>
+      <Stack spacing={2}>
+        <Text color="white" fontWeight={500}>Equilibrium #3454</Text>
+        <Text color="primary.500" fontSize="sm" width={250}  >
+          Our equilibrium collection promotes balance and calm.
+        </Text>
+
+        <Stack flexDir="row" justifyContent="space-between" fontSize="xs" textAlign="center" alignItems="center" >
+          <Stack color="primary.400" direction="row" justifyContent="space-between" spacing={2} paddingTop={2}>
+            <Image src={eth} width={2} height={3} ></Image>
+            <Text >0.041 ETH</Text>
+          </Stack>
+
+          <Stack direction="row" >
+            <Image src={clock} width={4} height={4} ></Image>
+            <Text color="primary.500" >3 days left</Text>
+          </Stack>
+
+        </Stack>
+      </Stack>
+      <Divider borderColor="whiteAlpha.400" />
+      <Stack direction="row" alignItems="center"  >
+        <Box width={8} height={8} borderColor="white" borderRadius={50} borderWidth={1}>
+          <Image src={profile}></Image>
+        </Box>
+        <Text color="primary.500" fontSize="xs"  >Created by <Text as="span" color="white" >Jules Weyrn</Text></Text>
+      </Stack>
+    </Stack>
+  )
+}
+
+
+export default App
